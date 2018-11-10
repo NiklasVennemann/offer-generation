@@ -1,0 +1,10 @@
+<div>Das Angebot:</div>
+<div *ngIf="hatWand && (quadratmeterWand!=0)">Wände({{quadratmeterWandDanach}}m²)</div>
+<div *ngIf="hatWand && (quadratmeterWand!=0)">Preis insgesamt in €: {{priceTotalAfterwards}}</div>
+<div style="text-indent:10px" *ngFor="let room of rooms">
+    <div *ngIf="hatWand && (getQuadratmeterOfRoom(room)!=0)">{{room}} ({{this.getQuadratmeterOfRoom(room)}}m²) </div>
+    <div *ngIf="hatWand && (getQuadratmeterOfRoom(room)!=0)">Preis insgesamt in €: {{getPricePaintWallOfRoom(room)}} </div>
+    <div *ngIf="abkleben(room)" style="text-indent:10px">abkleben ({{getMeterOfMaskOfRoom(room)}} m)</div>
+    <div style="text-indent:10px">1. Mal Streichen (xy m²)</div>
+    <div style="text-indent:10px">2. Mal Streichen (a m²)</div>
+</div>
